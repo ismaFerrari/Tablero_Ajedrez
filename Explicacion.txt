@@ -41,27 +41,21 @@ Cada celda se llena inicialmente con 'A', representando el color azul.
 Cálculo del máximo de celdas rojas por fila:
 
 javascript
-Copiar código
 const maximosRojosPorFila = Math.min(tamano, Math.floor(tamano / 2));
 Calcula cuántas celdas rojas puede haber como máximo en cada fila.
 Usa Math.floor(tamano / 2) para dividir el tablero en dos mitades, asegurando equilibrio entre colores.
 Math.min se asegura de que este valor no exceda el tamaño del tablero.
 Recorrido de las filas:
 
-javascript
-Copiar código
+
 for (let fila = 0; fila < tamano; fila++) {
 Itera sobre cada fila del tablero.
 Determinación de las celdas rojas por fila:
 
-javascript
-Copiar código
 const rojosEnFila = fila % (maximosRojosPorFila + 1);
 Usa el operador % para alternar la cantidad de celdas rojas por fila, asegurando que las filas no tengan patrones idénticos.
 Colocación de celdas rojas:
 
-javascript
-Copiar código
 let rojosColocados = 0;
 for (let columna = 0; columna < tamano; columna++) {
     if (rojosColocados < rojosEnFila) {
@@ -73,23 +67,17 @@ Recorre cada columna dentro de la fila actual.
 Si el número de celdas rojas colocadas (rojosColocados) es menor al límite permitido (rojosEnFila), cambia el valor de la celda a 'R'.
 Devolución del tablero:
 
-javascript
-Copiar código
 return tablero;
 Devuelve el tablero completo como una matriz bidimensional.
 
 Función imprimirTablero
 Definición de la función:
 
-javascript
-Copiar código
 function imprimirTablero(tablero) {
 Declara una función que se encarga de mostrar el tablero en consola.
 
 Impresión fila por fila:
 
-javascript
-Copiar código
 tablero.forEach(fila => {
     console.log(fila.join(' '));
 });
@@ -98,16 +86,12 @@ fila.join(' ') convierte la fila en una cadena separada por espacios, facilitand
 Ejecución del Código
 Generación e impresión de un tablero de 8x8:
 
-javascript
-Copiar código
 const tableroPequeno = generarTableroAjedrez(8);
 imprimirTablero(tableroPequeno);
 Genera un tablero de tamaño 8x8.
 Imprime el tablero en la consola.
 Generación de un tablero de 1000x1000:
 
-javascript
-Copiar código
 const tableroGrande = generarTableroAjedrez(1000);
 // imprimirTablero(tableroGrande); // Comentado para evitar impresiones extensas
 Genera un tablero de tamaño 1000x1000.
